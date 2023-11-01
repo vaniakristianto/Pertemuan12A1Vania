@@ -1,0 +1,30 @@
+# Import module matematika math
+import math
+
+# Fungsi untuk menghitung diskriminan
+def hitung_diskriminan(a, b, c):
+    return (b**2)-(4*a*c)
+
+# Fungsi untuk menghitung akar-akar
+def hitung_akar(a, b, c):
+    d = hitung_diskriminan(a, b, c)
+    if d>=0:
+        x1 = (-b+math.sqrt(d))/(2*a)
+        x2 = (-b-math.sqrt(d))/(2*a)
+        return x1, x2
+    else:
+        return None, None
+
+# Input koefisien dari keyboard
+a = int(input("Masukkan a: "))
+b = int(input("Masukkan b: "))
+c = int(input("Masukkan c: "))
+
+# Menemukan x1 dan x2
+x1, x2 = hitung_akar(a, b, c)
+
+# Menampilkan solusi
+if x1 and x2 is not None:
+    print('Solusinya adalah {0} dan {1}'.format(x1, x2))
+else:
+    print("Persamaan kuadrat tidak memiliki akar real")

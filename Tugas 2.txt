@@ -1,0 +1,55 @@
+import math
+
+def menu():
+    print("Pilih Bentuk 2D")
+    print()
+    print("1. Persegi Panjang")
+    print("2. Lingkaran")
+    print("3. Segitiga")
+    print("4. Keluar")
+
+def persegi(p, l):
+    return p*l
+
+def lingkaran(r):
+    return math.pi*r**2
+
+def segitiga(a, t):
+    return (a*t)/2
+
+
+while True:
+    menu()
+    pilihan = int(input("Masukkan pilihan Anda: "))
+    print()
+    if pilihan == 1:
+        print ("Menghitung Luas Persegi Panjang")
+        p = float(input("Masukkan Panjang : "))
+        l = float(input("Masukkan Lebar : "))
+        luas = persegi(p, l)
+        print("Luas Persegi Panjang adalah", luas)
+    elif pilihan == 2:
+        print ("Menghitung Luas Lingkaran")
+        r = float(input("Masukkan jari-jari: "))
+        luas = lingkaran(r)
+        print("Luas Lingkaran adalah", luas)
+    elif pilihan == 3:
+        print ("Menghitung Luas Segitiga")
+        a = float(input("Masukkan Alas : "))
+        t = float(input("Masukkan Tinggi : "))
+        luas = segitiga(a, t)
+        print("Luas Segitiga adalah", luas)
+    elif pilihan == 4:
+        exit()
+    else:
+        print("Pilihan tidak tersedia.")
+        
+    print()
+    print("Coba lagi [Y/N]?")
+    back = input().upper()
+    if back == "Y":
+        print()
+        print()
+        continue
+    else:
+        exit()
